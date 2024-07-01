@@ -35,9 +35,18 @@ optional arguments:
 
 ## Installation guide
 
-Safe Eyes is available in Ubuntu PPA, Arch AUR, Gentoo and Python PyPI. You can choose any installation source and install on any Linux system with Python 3.
+Safe Eyes is available on the official repositories of many popular the distributions.
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/safeeyes.svg)](https://repology.org/project/safeeyes/versions)
+
+
+It is also available in Ubuntu PPA, Arch AUR, Gentoo and Python PyPI. You can choose any installation source and install on any Linux system with Python 3.
+
+
 
 ### Ubuntu, Linux Mint and other Ubuntu Derivatives
+
+The official Safe Eyes PPA hosts the latest version of safeeyes for Ubuntu 22.04 and above. On older versions of Ubuntu, an older version of Safe Eyes is available on the official repositories.
 
 ```bash
 sudo add-apt-repository ppa:safeeyes-team/safeeyes
@@ -138,7 +147,7 @@ Some Linux systems like CentOS do not have matching dependencies available in th
 
     python3 -m venv venv
     source venv/bin/activate
-    pip3 install dbus-python safeeyes
+    pip3 install safeeyes
     ```
 
 3. Start Safe Eyes from the terminal
@@ -168,6 +177,7 @@ Thirdparty plugins are available at another GitHub repository: [safeeyes-plugins
 
 ## How to Release?
 
+0. Run `update-po.sh` to generate new translation files (which will be eventually updated by translators). Commit and push the changes to the master branch.
 1. Checkout the latest commits from the `master` branch
 2. Run `python3 -m safeeyes` to make sure nothing is broken
 3. Update the Safe Eyes version in the following places (Open the project in VSCode and search for the current version):
