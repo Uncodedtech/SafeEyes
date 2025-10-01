@@ -17,6 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import datetime
+import gettext
 import pytest
 import typing
 
@@ -129,6 +130,14 @@ class TestSafeEyesCore:
             return handle
 
         yield create_handle
+
+    def get_context(self) -> context.Context:
+        return context.Context(
+            api=mock.Mock(spec=context.API),
+            locale=gettext.NullTranslations(),
+            version="0.0.0",
+            session={},
+        )
 
     def run_next_break(
         self,
@@ -252,9 +261,7 @@ class TestSafeEyesCore:
         ) == datetime.datetime.fromisoformat(string)
 
     def test_start_empty(self, sequential_threading: SequentialThreadingFixture):
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         config = model.Config(
             user_config={
                 "short_breaks": [],
@@ -280,9 +287,7 @@ class TestSafeEyesCore:
         on_update_next_break.assert_not_called()
 
     def test_start(self, sequential_threading: SequentialThreadingFixture):
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         config = model.Config(
             user_config={
                 "short_breaks": [
@@ -335,9 +340,7 @@ class TestSafeEyesCore:
         sequential_threading: SequentialThreadingFixture,
         time_machine: TimeMachineFixture,
     ):
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         short_break_duration = 15  # seconds
         short_break_interval = 15  # minutes
         pre_break_warning_time = 10  # seconds
@@ -462,9 +465,7 @@ class TestSafeEyesCore:
         time_machine: TimeMachineFixture,
     ):
         """Example taken from https://github.com/slgobinath/safeeyes/issues/640."""
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         short_break_duration = 300  # seconds = 5min
         short_break_interval = 25  # minutes
         pre_break_warning_time = 10  # seconds
@@ -578,9 +579,7 @@ class TestSafeEyesCore:
         time_machine: TimeMachineFixture,
     ):
         """Test idling for short amount of time."""
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         short_break_duration = 15  # seconds
         short_break_interval = 15  # minutes
         pre_break_warning_time = 10  # seconds
@@ -721,9 +720,7 @@ class TestSafeEyesCore:
         time_machine: TimeMachineFixture,
     ):
         """Test idling for longer than long break time."""
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         short_break_duration = 15  # seconds
         short_break_interval = 15  # minutes
         pre_break_warning_time = 10  # seconds
@@ -879,9 +876,7 @@ class TestSafeEyesCore:
 
         This used to skip all the short breaks too.
         """
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
+        ctx = self.get_context()
         short_break_duration = 15  # seconds
         short_break_interval = 15  # minutes
         pre_break_warning_time = 10  # seconds

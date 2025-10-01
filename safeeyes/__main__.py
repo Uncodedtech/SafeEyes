@@ -28,7 +28,7 @@ from safeeyes.model import Config
 from safeeyes.safeeyes import SafeEyes
 
 
-def main():
+def main() -> None:
     """Start the Safe Eyes."""
     signal.signal(signal.SIGINT, signal.SIG_DFL)  # Handle Ctrl + C
 
