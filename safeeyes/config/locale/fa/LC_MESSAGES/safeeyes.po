@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-10-11 17:07+0000\n"
+"PO-Revision-Date: 2025-12-27 17:00+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/safe-eyes/"
 "translations/fa/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 # Short break
 msgid "Gently close your eyes"
@@ -58,15 +58,15 @@ msgid "show the about dialog"
 msgstr "نشان دادن پنجره درباره"
 
 # Commandline arg description
-msgid "disable the currently running safeeyes instance"
+msgid "disable the currently running Safe Eyes instance"
 msgstr "از کار انداختن نمونهٔ محافظ چشم در حال اجرا"
 
 # Commandline arg description
-msgid "enable the currently running safeeyes instance"
+msgid "enable the currently running Safe Eyes instance"
 msgstr "به کار انداختن نمونهٔ محافظ چشم در حال اجرا"
 
 # Commandline arg description
-msgid "quit the running safeeyes instance and exit"
+msgid "quit the running Safe Eyes instance and exit"
 msgstr "بستن و خروج از نمونهٔ محافظ چشم در حال اجرا"
 
 # Commandline arg description
@@ -74,7 +74,7 @@ msgid "show the settings dialog"
 msgstr "نمایش گفت‌وگوی تنظیمات"
 
 # Commandline arg description
-msgid "start safeeyes in debug mode"
+msgid "start Safe Eyes in debug mode"
 msgstr "اجرای محافظ چشم در حالت رفع اشکال"
 
 # Commandline arg description
@@ -370,7 +370,7 @@ msgstr "محافظ صفحه"
 
 # plugin/screensaver
 msgid "Lock the screen after long breaks by starting screensaver/screen-lock"
-msgstr ""
+msgstr "قفل کردن صفحه پس از استراحت‌های طولانی با اجرا کردن محافظ یا قفل صفحه"
 
 # plugin/screensaver
 msgid "Custom screensaver or screen-lock command"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-06-20 06:03+0000\n"
+"PO-Revision-Date: 2025-12-28 20:00+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/safe-eyes/"
 "translations/lt/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.15.1\n"
 
 # Short break
 msgid "Gently close your eyes"
@@ -59,28 +59,28 @@ msgid "show the about dialog"
 msgstr "rodyti informaciją apie programą"
 
 # Commandline arg description
-msgid "disable the currently running safeeyes instance"
-msgstr "išjungti šiuo metu paleistą safeeyes"
+msgid "disable the currently running Safe Eyes instance"
+msgstr "išjungti šiuo metu paleistą Safe Eyes"
 
 # Commandline arg description
-msgid "enable the currently running safeeyes instance"
-msgstr "įjungti šiuo metu paleistą safeeyes"
+msgid "enable the currently running Safe Eyes instance"
+msgstr "įjungti šiuo metu paleistą Safe Eyes"
 
 # Commandline arg description
-msgid "quit the running safeeyes instance and exit"
-msgstr "baigti paleisto safeeyes darbą ir išeiti"
+msgid "quit the running Safe Eyes instance and exit"
+msgstr "baigti paleisto Safe Eyes darbą ir išeiti"
 
 # Commandline arg description
 msgid "show the settings dialog"
 msgstr "rodyti nuostatų langą"
 
 # Commandline arg description
-msgid "start safeeyes in debug mode"
-msgstr "paleisti safeeyes derinimo veiksenoje"
+msgid "start Safe Eyes in debug mode"
+msgstr "paleisti Safe Eyes derinimo veiksenoje"
 
 # Commandline arg description
 msgid "print the status of running safeeyes instance and exit"
-msgstr "išvesti paleisto safeeyes egzemplioriaus būseną ir išeiti"
+msgstr "išvesti paleisto Safe Eyes egzemplioriaus būseną ir išeiti"
 
 # Status message
 msgid "Safe Eyes is not running"
@@ -373,10 +373,12 @@ msgstr "Ekrano užsklanda"
 # plugin/screensaver
 msgid "Lock the screen after long breaks by starting screensaver/screen-lock"
 msgstr ""
+"Užrakinti ekraną po ilgų pertraukų paleidžiant ekrano užsklandą/ekrano "
+"užraktą"
 
 # plugin/screensaver
 msgid "Custom screensaver or screen-lock command"
-msgstr ""
+msgstr "Tinkinta ekrano užsklandos ar ekrano užrakto komanda"
 
 # plugin/screensaver
 msgid "Minimum seconds to skip without screensaver"
@@ -586,25 +588,27 @@ msgstr ""
 
 msgid "Customizing the postpone and skip shortcuts does not work on Wayland."
 msgstr ""
+"Atidėjimo ir praleidimo sparčiųjų klavišų tinkinimas neveikia Wayland "
+"aplinkoje."
 
 msgid "Safe Eyes - Error"
-msgstr ""
+msgstr "Safe Eyes – Klaida"
 
 msgid "A required plugin is missing dependencies!"
-msgstr ""
+msgstr "Reikalingam papildiniui trūksta priklausomybių!"
 
 msgid "Postponement duration in"
-msgstr ""
+msgstr "Atidėjimo trukmė"
 
 msgid "minutes"
-msgstr ""
+msgstr "minutėmis"
 
 msgid "seconds"
-msgstr ""
+msgstr "sekundėmis"
 
 #, python-format
 msgid "Please install one of the command-line tools: %s"
-msgstr ""
+msgstr "Įsidiekite vieną iš komandų eilutės įrankių: %s"
 
 # plugin/screensaver
 #~ msgid "Lock the screen after long breaks by starting screensaver"

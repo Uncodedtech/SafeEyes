@@ -429,7 +429,7 @@ def initialize_safeeyes():
 
     # Copy the safeeyes.json
     shutil.copy2(SYSTEM_CONFIG_FILE_PATH, CONFIG_FILE_PATH)
-    os.chmod(CONFIG_FILE_PATH, 0o666)
+    os.chmod(CONFIG_FILE_PATH, 0o600)
 
     # initialize_safeeyes gets called when the configuration file is not present, which
     # happens just after installation or manual deletion of
@@ -480,8 +480,8 @@ def create_startup_entry(force=False):
     startup_entry = os.path.join(
         startup_dir_path, "io.github.slgobinath.SafeEyes.desktop"
     )
-    # until SafeEyes 2.1.5 the startup entry had another name
-    # https://github.com/slgobinath/SafeEyes/commit/684d16265a48794bb3fd670da67283fe4e2f591b#diff-0863348c2143a4928518a4d3661f150ba86d042bf5320b462ea2e960c36ed275L398
+    # until Safe Eyes 2.1.5 the startup entry had another name
+    # https://github.com/slgobinath/safeeyes/commit/684d16265a48794bb3fd670da67283fe4e2f591b#diff-0863348c2143a4928518a4d3661f150ba86d042bf5320b462ea2e960c36ed275L398
     obsolete_entry = os.path.join(startup_dir_path, "safeeyes.desktop")
 
     create_link = False
@@ -546,6 +546,7 @@ def initialize_platform():
         delete(desktop_entry)
 
         # Create a link
+        logging.debug(f"Create desktop entry at {desktop_entry}")
         try:
             os.symlink(SYSTEM_DESKTOP_FILE, desktop_entry)
         except OSError:
@@ -564,7 +565,14 @@ def initialize_platform():
             parent_dir = str(Path(local_icon).parent)
 
             if os.path.exists(global_icon):
-                # This icon is already added to the /usr/share/icons/hicolor folder
+                # This icon is already added to the /usr/share/icons/hicolor folder.
+                # No need to create a link but we delete potentially stale symlinks
+                # from e.g. past runs from a virtualenv that has been removed in the
+                # meantime to avoid ending up with hard-to-debug Safe Eyes without
+                # icons.
+                if os.path.lexists(local_icon):
+                    logging.debug(f"Delete duplicate icon link at {local_icon}")
+                    delete(local_icon)
                 continue
 
             # Create the directory if not exists
@@ -574,6 +582,7 @@ def initialize_platform():
             delete(local_icon)
 
             # Add a link for the icon
+            logging.debug(f"Create icon link at {local_icon}")
             try:
                 os.symlink(system_icon, local_icon)
             except OSError:
@@ -588,7 +597,7 @@ def reset_config():
     shutil.copy2(SYSTEM_CONFIG_FILE_PATH, CONFIG_FILE_PATH)
 
     # Add write permission (e.g. if original file was stored in /nix/store)
-    os.chmod(CONFIG_FILE_PATH, 0o666)
+    os.chmod(CONFIG_FILE_PATH, 0o600)
 
     create_startup_entry()
 

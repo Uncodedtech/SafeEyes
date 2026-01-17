@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-10-11 17:07+0000\n"
+"PO-Revision-Date: 2026-01-16 07:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/safe-eyes/"
 "translations/he/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.2\n"
 
 # Short break
 msgid "Gently close your eyes"
@@ -35,7 +35,7 @@ msgstr "לסובב את העיניים נגד כיוון השעון"
 
 # Short break
 msgid "Blink your eyes"
-msgstr "למצמץ את העיניים"
+msgstr "למצמץ עם העיניים"
 
 # Short break
 msgid "Focus on a point in the far distance"
@@ -47,7 +47,7 @@ msgstr "לשתות קצת מים"
 
 # Long break
 msgid "Walk for a while"
-msgstr "ללכת הליכה קצרה"
+msgstr "לצאת להליכה קצרה"
 
 # Long break
 msgid "Lean back at your seat and relax"
@@ -55,31 +55,31 @@ msgstr "להישען אחורה בכיסא ולהירגע"
 
 # Commandline arg description
 msgid "show the about dialog"
-msgstr "show the about dialog"
+msgstr "הצגת החלונית על אודות"
 
 # Commandline arg description
-msgid "disable the currently running safeeyes instance"
-msgstr "disable the currently running safeeyes instance"
+msgid "disable the currently running Safe Eyes instance"
+msgstr "כיבוי העותק הפעיל הנוכחי של Safe Eyes"
 
 # Commandline arg description
-msgid "enable the currently running safeeyes instance"
-msgstr "enable the currently running safeeyes instance"
+msgid "enable the currently running Safe Eyes instance"
+msgstr "הפעלת העותק הפעיל הנוכחי של Safe Eyes"
 
 # Commandline arg description
-msgid "quit the running safeeyes instance and exit"
-msgstr "quit the running safeeyes instance and exit"
+msgid "quit the running Safe Eyes instance and exit"
+msgstr "חיסול העותק הפעיל של Safe Eyes ולצאת"
 
 # Commandline arg description
 msgid "show the settings dialog"
-msgstr "show the settings dialog"
+msgstr "הצגת חלונית ההגדרות"
 
 # Commandline arg description
-msgid "start safeeyes in debug mode"
-msgstr "start safeeyes in debug mode"
+msgid "start Safe Eyes in debug mode"
+msgstr "start Safe Eyes in debug mode"
 
 # Commandline arg description
 msgid "print the status of running safeeyes instance and exit"
-msgstr "print the status of running safeeyes instance and exit"
+msgstr "print the status of running Safe Eyes instance and exit"
 
 # Status message
 msgid "Safe Eyes is not running"
