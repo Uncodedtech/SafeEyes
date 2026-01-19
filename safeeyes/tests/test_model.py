@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import gettext
 import pytest
 import random
 import typing
@@ -52,6 +53,14 @@ class TestBreak:
 
 
 class TestBreakQueue:
+    def get_context(self) -> context.Context:
+        return context.Context(
+            api=mock.Mock(spec=context.API),
+            locale=gettext.NullTranslations(),
+            version="0.0.0",
+            session={},
+        )
+
     def test_create_empty(self) -> None:
         config = model.Config(
             user_config={
@@ -66,11 +75,7 @@ class TestBreakQueue:
             system_config={},
         )
 
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
-
-        bq = model.BreakQueue.create(config, ctx)
+        bq = model.BreakQueue.create(config, self.get_context())
 
         assert bq is None
 
@@ -101,11 +106,7 @@ class TestBreakQueue:
             system_config={},
         )
 
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
-
-        bq = model.BreakQueue.create(config, ctx)
+        bq = model.BreakQueue.create(config, self.get_context())
 
         assert bq is not None
 
@@ -138,11 +139,7 @@ class TestBreakQueue:
             system_config={},
         )
 
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
-
-        bq = model.BreakQueue.create(config, ctx)
+        bq = model.BreakQueue.create(config, self.get_context())
 
         assert bq is not None
 
@@ -180,11 +177,7 @@ class TestBreakQueue:
             system_config={},
         )
 
-        ctx = context.Context(
-            api=mock.Mock(spec=context.API), locale="en_US", version="0.0.0", session={}
-        )
-
-        bq = model.BreakQueue.create(config, ctx)
+        bq = model.BreakQueue.create(config, self.get_context())
 
         assert bq is not None
 
